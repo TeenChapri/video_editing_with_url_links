@@ -15,7 +15,7 @@ on:
 
 jobs:
   my-job:
-    runs-on: 	windows-latest
+    runs-on: windows-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     #   ENV_VAR_2: ${{ secrets.ORG_SECRET_2 }}
