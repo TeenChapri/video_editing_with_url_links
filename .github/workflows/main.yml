@@ -40,5 +40,5 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python main.py --urls "['https://download.samplelib.com/mp4/sample-5s.mp4', 'https://download.samplelib.com/mp4/sample-10s.mp4']" --output "output.mp4" 
+          python main.py --urls "['https://download.samplelib.com/mp4/sample-5s.mp4', 'https://download.samplelib.com/mp4/sample-10s.mp4']" --output "output.mp4" --gh_token "${{ secrets.GH_TOKEN }}" --tag "v1.0.${{ github.run_number }}"
 
