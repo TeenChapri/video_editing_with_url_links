@@ -7,7 +7,7 @@ import ast
 import requests
 # import datetime
 import json
-from github import Github, GithubException
+from github import Github
 # conditional comment if not required
 # import facebook
 
@@ -108,11 +108,11 @@ output_path = os.path.abspath(output_file)
 # Authenticate with a personal access token
 g = Github(args.gh_token)
 # Get the repository object
-try:
-    repo = g.get_repo(args.owner_repo) #  todo change
-except GithubException:
-        print("Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token, which is automatically used by the action.")
-        sys.exit(1)
+# try:
+repo = g.get_repo(args.owner_repo) #  todo change
+# except GithubException:
+#         print("Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token, which is automatically used by the action.")
+#         sys.exit(1)
 
 
 
