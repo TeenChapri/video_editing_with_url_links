@@ -1,0 +1,46 @@
+name: "Edit Video with URL links"
+author: Teen Chapri
+description: "Create a video with the help of video url links by adding each video link in series in order say respectively "
+
+inputs:
+  gh_token:
+    description: "GitHub access token with Repo scope"
+    required: true
+    default: ${{ github.token }}
+
+  owner_repo:
+    description: "Your GitHub User name / repository name "
+    default: "${{ github.actor }}/${{ github.repository_name }}"
+    required: true
+
+  urls:
+    description: "Your .mp4 downloadable Video Url Links as String List<String>  .toString "
+    default: "[]"
+    required: true
+
+  output:
+    description: "Video Name That You Want in Output <myvideo.mp4>"
+    default: "output.mp4"
+    required: false
+
+  intro:
+    description: "To Use this Feature You have To edit the whole code because we need .mp4 video stored in path not as url link "
+    # default: "intro.mp4"
+    required: false
+  outro:
+    description: "To Use this Feature You have To edit the whole code because we need .mp4 video stored in path not as url link "
+    # default: "outro.mp4"
+    required: false
+  tag:
+    description: " Tag for Release Tab "
+    default: v1.0.${{ github.run_number }}
+    required: false
+  
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "video"
+  color: "orange"
