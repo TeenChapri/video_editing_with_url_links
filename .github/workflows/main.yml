@@ -41,7 +41,7 @@ jobs:
           python3 -m pip install --upgrade pip
           pip3 install --upgrade --user pip==22.2
           pip3 install -r requirements.txt
-          pip3 install github
+          pip3 install PyGithub
           pip3 install argparse
           pip3 install requests
           pip3 install setuptools
