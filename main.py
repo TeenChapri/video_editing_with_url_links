@@ -7,7 +7,7 @@ import ast
 import requests
 # import datetime
 import json
-from github import Github
+#from github import Github
 # conditional comment if not required
 # import facebook
 
@@ -106,10 +106,10 @@ output_path = os.path.abspath(output_file)
 
 # /////////////////////
 # Authenticate with a personal access token
-g = Github(args.gh_token)
+#g = Github(args.gh_token)
 # Get the repository object
 # try:
-repo = g.get_repo(args.owner_repo) #  todo change
+#repo = g.get_repo(args.owner_repo) #  todo change
 # except GithubException:
 #         print("Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token, which is automatically used by the action.")
 #         sys.exit(1)
@@ -117,9 +117,9 @@ repo = g.get_repo(args.owner_repo) #  todo change
 
 
 # Get the release object
-release = repo.get_release(args.tag) #  todo change
+#release = repo.get_release(args.tag) #  todo change
 
 
 # Upload an artifact to the release
-with open(output_path, "rb") as f:
-    release.upload_asset(output_path, args.output, f.read())
+#with open(output_path, "rb") as f:
+#    release.upload_asset(output_path, args.output, f.read())
