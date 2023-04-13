@@ -1,0 +1,40 @@
+name: My Workflow
+
+on:
+  workflow_dispatch:
+    inputs: 
+      urls:
+        description: 'URL links , downloadable links'
+        required: true
+      output:
+        description: 'output file name'
+        required: true
+      parameter_2:
+        description: 'Parameter 2'
+        required: true
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    #   ENV_VAR_2: ${{ secrets.ORG_SECRET_2 }}
+    # steps:
+    #   - name: Run API request and Download Edit Upload
+    #     uses: some-action@v1
+    #     with:
+    #       version: ${{ github.event.inputs.api_version }}
+    #       parameter_1: ${{ github.event.inputs.parameter_1 }}
+    #       parameter_2: ${{ github.event.inputs.parameter_2 }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.x'
+          # Optional - x64 or x86 architecture, defaults to x64
+          architecture: 'x64'
+      # You can test your matrix by printing the current Python version
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
