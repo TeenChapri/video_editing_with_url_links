@@ -7,7 +7,7 @@ import ast
 import requests
 # import datetime
 import json
-from github import Github
+import Github
 # conditional comment if not required
 # import facebook
 
