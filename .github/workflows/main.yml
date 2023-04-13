@@ -48,4 +48,10 @@ jobs:
           pip3 install wheel
           pip3 install moviepy
           python main.py --urls "['https://download.samplelib.com/mp4/sample-5s.mp4', 'https://download.samplelib.com/mp4/sample-10s.mp4']" --output "output.mp4" --gh_token "${{ secrets.GH_TOKEN }}" --tag "v1.0.${{ github.run_number }}" --owner_repo "${{ github.repository }}"
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "output.mp4"
+          tag: v1.0.${{ github.run_number }}
+          token: ${{ secrets.GH_TOKEN }}
 
