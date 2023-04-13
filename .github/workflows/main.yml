@@ -47,5 +47,5 @@ jobs:
           pip3 install setuptools
           pip3 install wheel
           pip3 install moviepy
-          python main.py --urls "['https://download.samplelib.com/mp4/sample-5s.mp4', 'https://download.samplelib.com/mp4/sample-10s.mp4']" --output "output.mp4" --gh_token "${{ secrets.GH_TOKEN }}" --tag "v1.0.${{ github.run_number }}" --owner_repo "${{ github.actor }}/${{ github.repository_name }}"
+          python main.py --urls "['https://download.samplelib.com/mp4/sample-5s.mp4', 'https://download.samplelib.com/mp4/sample-10s.mp4']" --output "output.mp4" --gh_token "${{ secrets.GH_TOKEN }}" --tag "v1.0.${{ github.run_number }}" --owner_repo "${{ github.repository }}"
 
