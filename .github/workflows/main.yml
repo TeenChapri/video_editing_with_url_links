@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs: 
       video_urls:
-        description: 'URL links , downloadable links'
+        description: 'URL links list => downloadable links as a LIST of URL links'
         required: true
       output_fille_name:
         description: 'output file name must end with .mp4'
